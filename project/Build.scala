@@ -22,6 +22,8 @@ import java.io.File
 import org.eclipse.egit.github.core.client._
 import org.eclipse.egit.github.core.service._
 import ProguardPlugin._
+import sbtassembly.Plugin._
+import AssemblyKeys._
 
 object Build extends sbt.Build {
 
@@ -94,7 +96,7 @@ object Build extends sbt.Build {
         ("Signature-Version", VERSION)
       ),
       parallelExecution in Test := false
-    )
+    ) ++ assemblySettings ++ Seq(test in assembly := {})
   )
 
   private def uploadToGithubWith(file: File) {

@@ -93,7 +93,8 @@ public class Inspect extends TransformCommand implements FieldFilterCompleter {
 
             private void printStat(Object target) {
                 try {
-                    println(accessor + " " + accessor.getField(target) + " " + target + " " + target.getClass().getClassLoader());
+                    println(accessor + " " + accessor.getField(target) + " " + target + " " + target.getClass().getClassLoader()
+                        + " " + inst().getObjectSize(target));
                 } catch (Exception e) {
                     error(e);
                 }

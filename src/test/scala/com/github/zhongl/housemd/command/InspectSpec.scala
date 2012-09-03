@@ -60,7 +60,7 @@ class InspectSpec extends FunSpec with ShouldMatchers with AdviceReflection {
         }
       }
 
-      out.toString.split("\n").filter(l => !l.isEmpty && !l.startsWith("INFO")) should contain("G.i 5 " + g + " " + g.getClass.getClassLoader)
+      out.toString.split("\n").filter(l => !l.isEmpty && !l.startsWith("INFO")) should contain("G.i 5 " + g + " " + g.getClass.getClassLoader+" 0")
     }
   }
 
